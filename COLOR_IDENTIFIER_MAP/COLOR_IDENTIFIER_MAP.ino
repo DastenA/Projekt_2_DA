@@ -105,7 +105,7 @@ void loop() {
       setColor(0, 0, 255);
       delay(500);
     
-  }
+  }ff
   // Creates an if-statement where if the blueColor has a higher frequency then greenColor and redColor then the diode will react with red light. 
   if(blueColor > redColor && blueColor > greenColor){
     Serial.println(" - BLUE detected!"); // Prints out " - BLUE detected"
