@@ -15,10 +15,12 @@ int redColor = 0;
 int greenColor = 0;
 int blueColor = 0;
 
+// Creates variables for the diode
 const int greenled = 11;
 const int redled = 12;
 const int blueled = 13;
 
+// 
 int setColor(int R, int G, int B){
 analogWrite(redled, R);
 analogWrite(greenled, G);
@@ -53,8 +55,6 @@ void loop() {
   // Reading the output frequency
   redFrequency = pulseIn(sensorOut, LOW);
   // Remaping the value of the RED (R) frequency from 0 to 255
-  // You must replace with your own values. Here's an example: 
-  // redColor = map(redFrequency, 70, 120, 255,0);
   redColor = map(redFrequency, 22, 141, 255,0);
   
   // Printing the RED (R) value
@@ -69,8 +69,6 @@ void loop() {
   // Reading the output frequency
   greenFrequency = pulseIn(sensorOut, LOW);
   // Remaping the value of the GREEN (G) frequency from 0 to 255
-  // You must replace with your own values. Here's an example: 
-  // greenColor = map(greenFrequency, 100, 199, 255, 0);
   greenColor = map(greenFrequency, 39, 251, 255, 0);
   
   // Printing the GREEN (G) value  
@@ -85,8 +83,6 @@ void loop() {
   // Reading the output frequency
   blueFrequency = pulseIn(sensorOut, LOW);
   // Remaping the value of the BLUE (B) frequency from 0 to 255
-  // You must replace with your own values. Here's an example: 
-  // blueColor = map(blueFrequency, 38, 84, 255, 0);
   blueColor = map(blueFrequency, 30, 260, 255, 0);
   
   // Printing the BLUE (B) value 
@@ -95,20 +91,24 @@ void loop() {
   delay(100);
 
   // Checks the current detected color and prints
-  // a message in the serial monitor
+
+  // Creates an if-statement where if the redColor has a higher frequency then greenColor and blueColor then the diode will react with red light. 
   if(redColor > greenColor && redColor > blueColor){
-      Serial.println(" - RED detected!");
+      Serial.println(" - RED detected!"); // Prints out " - RED detected!"
         setColor(255, 0, 0);
         delay(500);
   }
+
+  // Creates an if-statement where if the greenColor has a higher frequency then redColor and blueColor then the diode will react with red light. 
   if(greenColor > redColor && greenColor > blueColor){
-    Serial.println(" - GREEN detected!");
+    Serial.println(" - GREEN detected!"); // Prints out " - GREEN detected"
       setColor(0, 0, 255);
       delay(500);
     
   }
+  // Creates an if-statement where if the blueColor has a higher frequency then greenColor and redColor then the diode will react with red light. 
   if(blueColor > redColor && blueColor > greenColor){
-    Serial.println(" - BLUE detected!");
+    Serial.println(" - BLUE detected!"); // Prints out " - BLUE detected"
       setColor(0, 255, 0);
       delay(500);
     
