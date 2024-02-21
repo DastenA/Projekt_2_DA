@@ -20,7 +20,7 @@ const int greenled = 11;
 const int redled = 12;
 const int blueled = 13;
 
-// 
+// Creates analog value for the RGB colors
 int setColor(int R, int G, int B){
 analogWrite(redled, R);
 analogWrite(greenled, G);
@@ -105,7 +105,7 @@ void loop() {
       setColor(0, 0, 255);
       delay(500);
     
-  }ff
+  }
   // Creates an if-statement where if the blueColor has a higher frequency then greenColor and redColor then the diode will react with red light. 
   if(blueColor > redColor && blueColor > greenColor){
     Serial.println(" - BLUE detected!"); // Prints out " - BLUE detected"
