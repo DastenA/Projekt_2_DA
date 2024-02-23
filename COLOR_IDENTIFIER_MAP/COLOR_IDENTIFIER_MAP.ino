@@ -95,21 +95,21 @@ void loop() {
   // Creates an if-statement where if the redColor has a higher frequency then greenColor and blueColor then the LED will react with red light. 
   if(redColor > greenColor && redColor > blueColor){
       Serial.println(" - RED detected!"); // Prints out " - RED detected!"
-        setColor(255, 0, 0);
+        setColor(255, 0, 0); // Shows red color on LED
         delay(500);
   }
 
   // Creates an if-statement where if the greenColor has a higher frequency then redColor and blueColor then the LED will react with red light. 
   if(greenColor > redColor && greenColor > blueColor){
     Serial.println(" - GREEN detected!"); // Prints out " - GREEN detected"
-      setColor(0, 0, 255);
+      setColor(0, 0, 255); // Shows green color on LED
       delay(500);
     
   }
   // Creates an if-statement where if the blueColor has a higher frequency then greenColor and redColor then the LED will react with red light. 
   if(blueColor > redColor && blueColor > greenColor){
     Serial.println(" - BLUE detected!"); // Prints out " - BLUE detected"
-      setColor(0, 255, 0);
+      setColor(0, 255, 0); // Shows Blue color on LED
       delay(500);
     
   }
